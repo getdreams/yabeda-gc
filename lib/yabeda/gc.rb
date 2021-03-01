@@ -44,6 +44,9 @@ module Yabeda
       gauge :oldmalloc_increase_bytes_limit, tags: [],
                                              comment: "Bytes limit that will trigger garbage collection of old objects"
 
+      gauge :read_barrier_faults, tags: [], comment: "Read barrier faults"
+      gauge :total_moved_objects, tags: [], comment: "Total moved objects"
+
       collect do
         stats = ::GC.stat
 
